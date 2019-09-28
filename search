@@ -1,0 +1,9 @@
+import requests
+r = requests.get('https://stepic.org/media/attachments/course67/3.6.3/699991.txt')
+s=r.text.strip()
+print(s.split()[0])
+while s.split()[0]!='We':
+  r = requests.get('https://stepic.org/media/attachments/course67/3.6.3/'+s)
+  s=r.text.strip()
+  print(s.split()[0])
+print(r.text)
